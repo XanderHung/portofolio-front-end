@@ -1,7 +1,6 @@
 "use client";
 
-import { ChakraProvider, Container } from "@chakra-ui/react";
-import { Header } from "../components";
+import HomeContent from "../modules/home/home-content";
 export default function Home() {
-  return <></>;
+  return <HomeContent />;
 }

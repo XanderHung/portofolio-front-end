@@ -254,6 +254,13 @@
   dependencies:
     "@chakra-ui/shared-utils" "2.0.5"
 
+"@chakra-ui/icons@^2.0.19":
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-2.0.19.tgz#b4581a59c2e2a2b95b01ab251eabb8cf984bb00f"
+  integrity sha512-0A6U1ZBZhLIxh3QgdjuvIEhAZi3B9v8g6Qvlfa3mu6vSnXQn2CHBZXmJwxpXxO40NK/2gj/gKXrLeUaFR6H/Qw==
+  dependencies:
+    "@chakra-ui/icon" "3.0.16"
+
 "@chakra-ui/image@2.0.16":
   version "2.0.16"
   resolved "https://registry.yarnpkg.com/@chakra-ui/image/-/image-2.0.16.tgz#0e3a48c3caa6dc1d340502ea96766d9ef31e27e8"
@@ -3618,7 +3625,7 @@ synckit@^0.8.5:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.5.0"
 
-tailwindcss@3.3.2:
+tailwindcss@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.2.tgz#2f9e35d715fdf0bbf674d90147a0684d7054a2d3"
   integrity sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==

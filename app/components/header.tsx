@@ -1,29 +1,41 @@
 "use client";
-import { Box, Container, Flex, HStack, Spacer, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  HStack,
+  Spacer,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import HeaderButton from "./header-button";
+
+export const navLinks = [
+  {
+    title: "Project",
+    url: "/project",
+  },
+  {
+    title: "Stack",
+    url: "/stack",
+  },
+  {
+    title: "Blog",
+    url: "/blog",
+  },
+];
 
 export default function header() {
   return (
-    <Container maxW="3xl">
-      <HStack alignItems="center" m={2} maxW={720}>
-        <Box m={2}>
-          <Text as="b" fontSize="sm">
-            Hung.
-          </Text>
-        </Box>
-        <Spacer />
-        <HStack>
-          <Box m={2}>
-            <Text as="b" fontSize="sm">
-              Project
-            </Text>
-          </Box>
-          <Box m={2}>
-            <Text as="b" fontSize="sm">
-              Blog
-            </Text>
-          </Box>
-        </HStack>
+    <HStack alignItems="center" mt={5} maxW="4xl">
+      <Stack flex={1}>
+        <HeaderButton title="Hung" link="/" />
+      </Stack>
+      <HStack>
+        {navLinks.map((navLink) => {
+          return <HeaderButton title={navLink.title} link={navLink.url} />;
+        })}
       </HStack>
-    </Container>
+    </HStack>
   );
 }
