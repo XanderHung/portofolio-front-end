@@ -1,4 +1,12 @@
-import { Heading, Image, Stack, Text, useMediaQuery } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  Heading,
+  Image,
+  Stack,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 
 export default function Profile() {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)", {
@@ -17,11 +25,14 @@ export default function Profile() {
           Hello, I Am Alexander Hung.
         </Heading>
         <Text mt="5" justifyItems="center" textAlign="justify">
-          Adventurer at heart | Exploring the world one step at a time 🌍✨ |
-          Capturing moments through my lens 📸 | Lover of art, culture, and all
-          things creative 🎨 | Spreading positivity and inspiration wherever I
-          go ✨ | Join me on this journey of discovery and growth! 🌱
+          I'm Graduate From Bina Nusantara University CS at 2022 🎓. I'm
+          passionate about Web Development, with a particular focus on Backend
+          Engineering. Feel free to reach out to me.
         </Text>
+        <HStack>
+          <Button>CV</Button>
+          <Button>Gitlab</Button>
+        </HStack>
       </Stack>
       <Stack
         maxW="230px"

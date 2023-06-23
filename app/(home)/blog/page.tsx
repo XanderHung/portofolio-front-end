@@ -1,4 +1,4 @@
-import BlogContent from "@/app/modules/blog/blog-content";
+import BlogContent from "@/modules/blog/blog-content";
 
 export default function Home() {
   return <BlogContent />;

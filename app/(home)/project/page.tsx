@@ -1,4 +1,5 @@
-import ProjectContent from "@/app/modules/project/project-content";
+import ProjectContent from "@/modules/project/project-content";
+
 export default function Home() {
   return <ProjectContent />;
 }

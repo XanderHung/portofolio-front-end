@@ -1,4 +1,4 @@
-import StackContent from "@/app/modules/stack/stack-content";
+import StackContent from "@/modules/stack/stack-content";
 
 export default function Stack() {
   return <StackContent />;

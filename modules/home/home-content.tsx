@@ -1,6 +1,8 @@
 import { Button, Heading, Stack, createIcon } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import Profile from "./profile-content";
+import ProjectContent from "../project/project-content";
+import Link from "next/link";
 
 export const ChakraIcon = createIcon({
   path: (
@@ -43,16 +45,34 @@ export default function HomeContent() {
           Current Favorite Tech Stack:
         </Heading>
         <Stack display="flex" flexDir="row" mt={5}>
-          <ChakraIcon w={14} h={14} m={1} />
-          <NextJsIcon w={14} h={14} m={1} />
-          <LaravelIcon w={14} h={14} m={1} />
-          <PostgersIcon w={14} h={14} m={1} />
-          <GolangIcon w={16} h={14} m={1} />
+          <ChakraIcon
+            w={{ base: 8, md: 14 }}
+            h={{ base: 8, md: 14 }}
+            m={1}
+            _hover={{ fill: "teal.400" }}
+          />
+          <NextJsIcon w={{ base: 8, md: 14 }} h={{ base: 8, md: 14 }} m={1} />
+          <LaravelIcon
+            w={{ base: 8, md: 14 }}
+            h={{ base: 8, md: 14 }}
+            m={1}
+            _hover={{ fill: "red" }}
+          />
+          <PostgersIcon w={{ base: 8, md: 14 }} h={{ base: 8, md: 14 }} m={1} />
+          <GolangIcon
+            w={{ base: 10, md: 16 }}
+            h={{ base: 8, md: 14 }}
+            m={1}
+            _hover={{ fill: "cyan.300" }}
+          />
         </Stack>
       </Stack>
-      <Button m={0} p={0} mt={16} color="blue.400">
+      <Button as="a" m={0} p={0} mt={16} color="blue.400" href="#project">
         <ArrowDownIcon w={8} h={8} />
       </Button>
+      <Stack id="project">
+        <ProjectContent slice={4} />
+      </Stack>
     </Stack>
   );
 }

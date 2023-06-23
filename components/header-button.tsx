@@ -4,14 +4,15 @@ interface Props {
 }
 
 import { Box, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function HeaderButton(props: Props) {
   const { title } = props;
   return (
-    <Box as="a" px={4} href={props.link}>
-      <Text as="b" fontSize="md" color="black">
+    <Link href={props.link}>
+      <Text as="b" p={{ base: 1, md: 4 }} fontSize="md" color="black">
         {title}
       </Text>
-    </Box>
+    </Link>
   );
 }

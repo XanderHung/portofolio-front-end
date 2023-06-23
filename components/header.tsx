@@ -9,6 +9,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import HeaderButton from "./header-button";
+import { useEffect, useState } from "react";
+import { url } from "inspector";
+import Link from "next/link";
 
 export const navLinks = [
   {
@@ -29,11 +32,23 @@ export default function header() {
   return (
     <HStack alignItems="center" mt={5} maxW="4xl">
       <Stack flex={1}>
-        <HeaderButton title="Hung" link="/" />
+        <Stack width={"fit-content"}>
+          <Link href="/">
+            <Text as="b" fontSize="md" color="black">
+              Hung
+            </Text>
+          </Link>
+        </Stack>
       </Stack>
       <HStack>
-        {navLinks.map((navLink) => {
-          return <HeaderButton title={navLink.title} link={navLink.url} />;
+        {navLinks.map((navLink, index) => {
+          return (
+            <HeaderButton
+              key={`navbar-${index}`}
+              title={navLink.title}
+              link={navLink.url}
+            />
+          );
         })}
       </HStack>
     </HStack>
