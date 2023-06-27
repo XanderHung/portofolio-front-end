@@ -7,18 +7,7 @@ import { Footer, Header } from "@/components";
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <CacheProvider>
-      <ChakraProvider>
-        <Container maxW="4xl">
-          
-          <Stack flexDir="column" minH="99vh" alignItems="stretch">
-            <Header />
-            <Stack as="section" width="full" mt="16" flex={1}>
-              {children}
-            </Stack>
-            <Footer />
-          </Stack>
-        </Container>
-      </ChakraProvider>
+      <ChakraProvider>{children}</ChakraProvider>
     </CacheProvider>
   );
 }

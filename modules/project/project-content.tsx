@@ -12,9 +12,9 @@ import {
   Button,
   Center,
   Heading,
-  Link,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export const data = [
   {
@@ -23,7 +23,7 @@ export const data = [
     end: "2025",
     status: "Ongoing",
     description:
-      "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code",
+      "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo ipsa iste perferendis similique delectus ullam perspiciatis, at beatae in numquam a commodi ducimus maxime ratione! Recusandae porro illum eveniet sint. ",
     picture: "/asset/scarlet.png",
   },
   {
@@ -77,7 +77,19 @@ export default function ProjectContent(props: Props) {
   const { slice = data.length } = props;
   return (
     <>
-      <Heading m={2}>Project</Heading>
+      {slice == data.length ? (
+        <Heading
+          my={2}
+          fontSize="6xl"
+          fontWeight="extrabold"
+          bgGradient="linear(to-r, #BA89E4, #EA98DA)"
+          bgClip="text"
+        >
+          Project
+        </Heading>
+      ) : (
+        <Heading>Favorite Project</Heading>
+      )}
       <Box
         display="flex"
         flexFlow={"row wrap"}

@@ -67,7 +67,7 @@ export default function HomeContent() {
           />
         </Stack>
       </Stack>
-      <Button as="a" m={0} p={0} mt={16} color="blue.400" href="#project">
+      <Button as="a" mb={16} p={0} mt={16} color="blue.400" href="#project">
         <ArrowDownIcon w={8} h={8} />
       </Button>
       <Stack id="project">

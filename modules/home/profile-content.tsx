@@ -27,7 +27,7 @@ export default function Profile() {
         <Text mt="5" justifyItems="center" textAlign="justify">
           I'm Graduate From Bina Nusantara University CS at 2022 🎓. I'm
           passionate about Web Development, with a particular focus on Backend
-          Engineering. Feel free to reach out to me.
+          Engineering. Feel free to reach me out.
         </Text>
         <HStack>
           <Button>CV</Button>

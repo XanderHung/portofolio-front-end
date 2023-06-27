@@ -1,4 +1,4 @@
-import { Providers } from "../provider";
+import { HomeProviders } from "./home-provider";
 
 export const metadata = {
   title: "Hung",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <HomeProviders>{children}</HomeProviders>;
 }
