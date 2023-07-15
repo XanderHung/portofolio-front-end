@@ -1,6 +1,8 @@
 "use client";
 import { ColorModeScript } from "@chakra-ui/react";
 import { Providers } from "./provider";
+import theme from "@/theme";
+import { NextScript } from "next/document";
 
 export default function RootLayout({
   children,

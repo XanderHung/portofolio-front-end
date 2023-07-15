@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Button,
   HStack,
@@ -30,8 +31,22 @@ export default function Profile() {
           Engineering. Feel free to reach me out.
         </Text>
         <HStack>
-          <Button>CV</Button>
-          <Button>Gitlab</Button>
+          <Button
+            as="a"
+            target="_blank"
+            rightIcon={<ChevronRightIcon />}
+            href=""
+          >
+            CV
+          </Button>
+          <Button
+            as="a"
+            rightIcon={<ChevronRightIcon />}
+            target="_blank"
+            href="https://gitlab.com/Hunga453"
+          >
+            Gitlab
+          </Button>
         </HStack>
       </Stack>
       <Stack

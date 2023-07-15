@@ -3,6 +3,8 @@ import { ArrowDownIcon } from "@chakra-ui/icons";
 import Profile from "./profile-content";
 import ProjectContent from "../project/project-content";
 import Link from "next/link";
+import ExperienceContent from "./expreience-content";
+import ContactForm from "./contact-form";
 
 export const ChakraIcon = createIcon({
   path: (
@@ -36,11 +38,41 @@ export const GolangIcon = createIcon({
   ),
 });
 
+const testing = [
+  {
+    title: "SMA Sutomo 1 Medan",
+    description:
+      "It's a lot of fun to start high school. I majored in science and took part in a variety of activities, managing the organization, making friends, and having fun with friends after school.",
+    start: "2015",
+    end: "2018",
+    status: "Complete",
+    color: "green",
+  },
+  {
+    title: "Bina Nusantara University",
+    description:
+      "I learned a lot at Bina Nusantara University (BINUS), beginning with the first year program, making friends, organizing between students, and working on joint projects. I also like the Binus neighborhood because there are many food vendors there.",
+    start: "2018",
+    end: "2022",
+    status: "Complete",
+    color: "green",
+  },
+  {
+    title: "Cv. Solusi Kreasi Global",
+    description:
+      "At CV. Solusi Kreasi Global (Springkraf), I learn a lot about backend engineering and some front end, and I'm grateful that i could working here. Also, kudos to my manager (Mr. Denny, Mr. Jemmy, Mr. Erwin) for helping me and all my friend",
+    start: "2022",
+    end: "Current",
+    status: "Ongoing",
+    color: "gray",
+  },
+];
+
 export default function HomeContent() {
   return (
-    <Stack alignItems="center">
+    <Stack>
       <Profile />
-      <Stack mt="16">
+      <Stack mt="16" alignItems="center">
         <Heading as="h2" fontSize="3xl">
           Current Favorite Tech Stack:
         </Heading>
@@ -67,12 +99,23 @@ export default function HomeContent() {
           />
         </Stack>
       </Stack>
-      <Button as="a" mb={16} p={0} mt={16} color="blue.400" href="#project">
+      <Button
+        mx="auto"
+        as="a"
+        w="fit-content"
+        mb={16}
+        p={0}
+        mt={16}
+        color="blue.400"
+        href="#project"
+      >
         <ArrowDownIcon w={8} h={8} />
       </Button>
       <Stack id="project">
         <ProjectContent slice={4} />
       </Stack>
+      <ExperienceContent data={testing} />
+      <ContactForm />
     </Stack>
   );
 }

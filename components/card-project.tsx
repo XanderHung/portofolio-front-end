@@ -9,6 +9,7 @@ import {
   Badge,
   Box,
   Button,
+  ButtonGroup,
   Image,
   Text,
   Tooltip,
@@ -22,10 +23,13 @@ interface Props {
     status: string;
     description: string;
     picture: string;
+    gitlab: string;
+    link?: string;
   };
 }
 
 export default function Card(props: Props) {
+  const { data } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
@@ -38,64 +42,88 @@ export default function Card(props: Props) {
       p={{ base: 2, md: 5, sm: 4 }}
       mb={10}
     >
-      <Image src={props.data.picture} boxSize="200px" m="auto"></Image>
+      <Image src={data.picture} boxSize="200px" m="auto"></Image>
       <Box p={4}>
         <Box pt={2} display="flex">
-          <Text mr={2}>{props.data.title}</Text>
+          <Text mr={2} my="auto" fontWeight="bold">
+            {data.title}
+          </Text>
           <Badge borderRadius="full" px={2} py={1}>
-            {props.data.status}
+            {data.status}
           </Badge>
         </Box>
       </Box>
       <Box px={4} lineHeight="tight" noOfLines={3} textAlign="justify">
-        <Text>{props.data.description}</Text>
+        <Text>{data.description}</Text>
       </Box>
-      <Box display="flex">
-        <Button flex={1} m={1} onClick={onOpen}>
-          View More
-        </Button>
-        <AlertDialog
-          leastDestructiveRef=""
-          motionPreset="slideInBottom"
-          onClose={onClose}
-          isOpen={isOpen}
-          isCentered
-        >
-          <AlertDialogOverlay />
-
-          <AlertDialogContent>
-            <AlertDialogHeader display="flex">
-              <Text mr={2}>{props.data.title}</Text>
-              <Badge borderRadius="full" px={2} py={2}>
-                {props.data.status}
-              </Badge>
-            </AlertDialogHeader>
-            <AlertDialogCloseButton />
-            <AlertDialogBody>
-              <Image src={props.data.picture} boxSize="200px" m="auto"></Image>
-              <Box px={4} lineHeight="tight" textAlign="justify">
-                <Text>{props.data.description}</Text>
-              </Box>
-            </AlertDialogBody>
-            <AlertDialogFooter display="flex">
-              <Button
-                as="a"
-                flex={1}
-                mx={2}
-                href="https://www.google.com"
-                target="_blank"
-              >
-                Source Code
-              </Button>
-              <Button as="a" flex={1} mx={2} href="">
-                Open
-              </Button>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
-        <Button flex={1} m={1}>
-          Open
-        </Button>
+      <Box display="flex" pt={2}>
+        <ButtonGroup flex={1} variant="outline">
+          <Button flex={1} m={1} onClick={onOpen} colorScheme="linkedin">
+            View More
+          </Button>
+          <AlertDialog
+            leastDestructiveRef=""
+            motionPreset="slideInBottom"
+            onClose={onClose}
+            isOpen={isOpen}
+            isCentered
+          >
+            <AlertDialogOverlay />
+            <AlertDialogContent>
+              <AlertDialogHeader display="flex">
+                <Text mr={2} my="auto">
+                  {data.title}
+                </Text>
+                <Badge borderRadius="full" px={2} py={2}>
+                  {data.status}
+                </Badge>
+              </AlertDialogHeader>
+              <AlertDialogCloseButton />
+              <AlertDialogBody>
+                <Image src={data.picture} boxSize="200px" m="auto"></Image>
+                <Box px={4} lineHeight="tight" textAlign="justify">
+                  <Text>{data.description}</Text>
+                </Box>
+              </AlertDialogBody>
+              <AlertDialogFooter display="flex">
+                <ButtonGroup flex={1} variant="outline">
+                  <Button
+                    as="a"
+                    flex={1}
+                    mx={2}
+                    href={data.gitlab}
+                    colorScheme="linkedin"
+                    target="_blank"
+                  >
+                    Source Code
+                  </Button>
+                  {!!data.link && (
+                    <Button
+                      as="a"
+                      flex={1}
+                      mx={2}
+                      href={data.link}
+                      colorScheme="linkedin"
+                    >
+                      Open
+                    </Button>
+                  )}
+                </ButtonGroup>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+          {!!data.link && (
+            <Button
+              as="a"
+              flex={1}
+              mx={2}
+              href={data.link}
+              colorScheme="linkedin"
+            >
+              Open
+            </Button>
+          )}
+        </ButtonGroup>
       </Box>
     </Box>
   );

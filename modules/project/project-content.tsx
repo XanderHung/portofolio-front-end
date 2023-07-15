@@ -25,6 +25,7 @@ export const data = [
     description:
       "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo ipsa iste perferendis similique delectus ullam perspiciatis, at beatae in numquam a commodi ducimus maxime ratione! Recusandae porro illum eveniet sint. ",
     picture: "/asset/scarlet.png",
+    gitlab: "https://www.gitlab.com",
   },
   {
     title: "Sharp",
@@ -34,6 +35,7 @@ export const data = [
     description:
       "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code",
     picture: "/asset/scarlet.png",
+    gitlab: "https://www.gitlab.com",
   },
   {
     title: "Xiao Mi",
@@ -43,6 +45,7 @@ export const data = [
     description:
       "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code",
     picture: "/asset/scarlet.png",
+    gitlab: "https://www.gitlab.com",
   },
   {
     title: "Oppo",
@@ -52,6 +55,7 @@ export const data = [
     description:
       "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code",
     picture: "/asset/scarlet.png",
+    gitlab: "https://www.gitlab.com",
   },
   {
     title: "Vivo",
@@ -61,6 +65,7 @@ export const data = [
     description:
       "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code",
     picture: "/asset/scarlet.png",
+    gitlab: "https://www.gitlab.com",
   },
   {
     title: "Advance",
@@ -70,6 +75,8 @@ export const data = [
     description:
       "In this project i learn abour how to make an api, learn about laravel, and refine/refactoring my code for an neat and readbly code",
     picture: "/asset/scarlet.png",
+    link: "testing",
+    gitlab: "https://www.gitlab.com",
   },
 ];
 
@@ -78,13 +85,7 @@ export default function ProjectContent(props: Props) {
   return (
     <>
       {slice == data.length ? (
-        <Heading
-          my={2}
-          fontSize="6xl"
-          fontWeight="extrabold"
-          bgGradient="linear(to-r, #BA89E4, #EA98DA)"
-          bgClip="text"
-        >
+        <Heading fontSize="5xl" mb={3}>
           Project
         </Heading>
       ) : (
