@@ -31,14 +31,7 @@ export default function Profile() {
           Engineering. Feel free to reach me out.
         </Text>
         <HStack>
-          <Button
-            as="a"
-            target="_blank"
-            rightIcon={<ChevronRightIcon />}
-            href=""
-          >
-            CV
-          </Button>
+          <Button rightIcon={<ChevronRightIcon />}>CV</Button>
           <Button
             as="a"
             rightIcon={<ChevronRightIcon />}

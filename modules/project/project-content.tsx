@@ -89,15 +89,15 @@ export default function ProjectContent(props: Props) {
           Project
         </Heading>
       ) : (
-        <Heading>Favorite Project</Heading>
+        <Heading>Favorite Project 💻</Heading>
       )}
       <Box
         display="flex"
         flexFlow={"row wrap"}
         justifyContent={"space-between"}
       >
-        {data.slice(0, slice).map((value) => {
-          return <Card data={value} />;
+        {data.slice(0, slice).map((value, index) => {
+          return <Card key={`card-${index}`} data={value} />;
         })}
       </Box>
       {slice < data.length && (

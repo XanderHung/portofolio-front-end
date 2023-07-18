@@ -18,7 +18,7 @@ export default function ExperienceContent(props: Props) {
   const { data } = props;
   return (
     <Stack>
-      <Heading>Experience</Heading>
+      <Heading>Experience 🎓</Heading>
       {data.map((experience, index) => {
         return (
           <Box borderWidth="1px" borderRadius="lg" key={`experience-${index}`}>
